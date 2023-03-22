@@ -1,0 +1,10 @@
+*~
+*#*
+*.pyc
+*.pyc~
+__pycache__
+*/__pycache__/*
+/static/articleicon
+/static/articlehome
+/DoonJournal/settings.py
+
