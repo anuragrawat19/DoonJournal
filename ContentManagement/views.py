@@ -1,4 +1,8 @@
 from django.shortcuts import render
+from .models import ContactUs
+from django.core.mail import send_mail
+
+
 
 # Create your views here.
 
@@ -10,3 +14,18 @@ def home(request):
 def about_us(request):
     template = 'about.html'
     return render(request,template)
+
+def contact_us(request):
+    template = 'contact.html'
+    if request.method == "POST":
+        data = request.POST
+        print(data)
+        name = data.get('name')
+        phone = data.get('phone')
+        email = data.get('email')
+        message = data.get('message')
+        ContactUs.objects.create(name=name,phone=phone,email=email,message=message)
+        contact_msg = "Dear Doon Journal , "+ name + " has contacted you  please check the below details. "+" Phone - " + phone + " Email - " + email + " Details - " + message 
+        send_mail('New Contact Request',contact_msg,email,['journal.doon@gmail.com'],fail_silently=False,)
+        msg = "Thanks for Contacting us, Our team will reach out to you"
+    return render(request,template,locals())

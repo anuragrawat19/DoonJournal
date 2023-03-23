@@ -34,4 +34,12 @@ class Article(BaseModel):
     image_icon        = models.ImageField(upload_to='static/articleicon/',blank=True,null=True)
     def __str__(self):
         return self.art_title
+
+class ContactUs(BaseModel):
+    name         = models.CharField(max_length=255)
+    phone           = models.CharField(max_length=255)
+    email           = models.EmailField()
+    message            = models.TextField()
+    def __str__(self):
+        return self.name + ' - ' + self.email
     

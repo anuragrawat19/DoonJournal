@@ -925,7 +925,7 @@ textarea#comment::placeholder {
     margin-top: 40px;
 }
 
-.send_bt a {
+.send_bt button {
     width: 100%;
     float: left;
     font-size: 20px;
@@ -937,7 +937,7 @@ textarea#comment::placeholder {
     font-weight: bold;
 }
 
-.send_bt a:hover {
+.send_bt button:hover {
     color: #ffffff;
     background-color: #0c1045;
 }
