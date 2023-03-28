@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Article,Section,ContactUs
+from .models import Article,Section,ContactUs,ContentSection
 
 # Register your models here.
 
@@ -19,6 +19,13 @@ class AdminArticle(admin.ModelAdmin):
 @admin.register(ContactUs)
 class AdminContactUs(admin.ModelAdmin):
     search_fields = ["email"]
+
+    def get_list_display(self, request):
+        return [field.name for field in self.model._meta.concrete_fields]
+
+@admin.register(ContentSection)
+class AdminContentSection(admin.ModelAdmin):
+    search_fields = ["title",'slug']
 
     def get_list_display(self, request):
         return [field.name for field in self.model._meta.concrete_fields]
