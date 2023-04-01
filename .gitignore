@@ -6,5 +6,6 @@ __pycache__
 */__pycache__/*
 /static/articleicon
 /static/articlehome
+/static/sectionimages
 /DoonJournal/settings.py
 

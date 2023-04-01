@@ -50,3 +50,10 @@ class ContentSection(BaseModel):
     
     def __str__(self):
         return self.title + ' - ' + self.slug
+
+class Images(BaseModel):
+    slug           = models.SlugField()
+    image          = models.ImageField(upload_to='static/sectionimages/',blank=True,null=True)
+    
+    def __str__(self):
+        return  self.slug
