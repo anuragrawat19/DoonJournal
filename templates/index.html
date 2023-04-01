@@ -103,42 +103,20 @@
                <div class="col-lg-12 col-sm-12">
                   <div class="newsletter_main">
                      <h1 class="recent_taital">Recent post</h1>
-                     <div class="recent_box">
-                        <div class="recent_left">
-                           <div class="image_6"><img src="/static/images/img-6.png"></div>
-                        </div>
-                        <div class="recent_right">
-                           <h3 class="consectetur_text">Consectetur adipiscing</h3>
-                           <p class="dolor_text">ipsum dolor sit amet, consectetur adipiscing </p>
-                        </div>
-                     </div>
-                     <div class="recent_box">
-                        <div class="recent_left">
-                           <div class="image_6"><img src="/static/images/img-7.png"></div>
-                        </div>
-                        <div class="recent_right">
-                           <h3 class="consectetur_text">Consectetur adipiscing</h3>
-                           <p class="dolor_text">ipsum dolor sit amet, consectetur adipiscing </p>
-                        </div>
-                     </div>
-                     <div class="recent_box">
-                        <div class="recent_left">
-                           <div class="image_6"><img src="/static/images/img-7.png"></div>
-                        </div>
-                        <div class="recent_right">
-                           <h3 class="consectetur_text">Consectetur adipiscing</h3>
-                           <p class="dolor_text">ipsum dolor sit amet, consectetur adipiscing </p>
-                        </div>
-                     </div>
-                     <div class="recent_box">
-                        <div class="recent_left">
-                           <div class="image_6"><img src="/static/images/img-7.png"></div>
-                        </div>
-                        <div class="recent_right">
-                           <h3 class="consectetur_text">Consectetur adipiscing</h3>
-                           <p class="dolor_text">ipsum dolor sit amet, consectetur adipiscing </p>
-                        </div>
-                     </div>
+                     {% for art in recent_articles %}
+                        <a href="/">
+                           <div class="recent_box">
+                              <div class="recent_left">
+                                 <div class="image_6"><img src="{{art.image_icon.url}}"></div>
+                              </div>
+                              <div class="recent_right">
+                                 <h3 class="consectetur_text">{{art.art_title}}</h3>
+                                 <p class="dolor_text">{{ art.description|slice:":100" | safe   }} </p>
+                              </div>
+                           </div>
+                        </a>
+
+                     {% endfor %}
                      
                   </div>
                </div>

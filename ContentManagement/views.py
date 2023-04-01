@@ -11,6 +11,8 @@ def home(request):
     template = 'index.html'
     # home_images = Images.objects.filter(active=2,slug='home-scroller')
     main_article = Article.objects.filter(active=2,main_home=True)
+    recent_articles = Article.objects.filter(active=2).order_by('-id')[:4]
+
     if main_article:
         main_article = main_article.latest('id')
 
