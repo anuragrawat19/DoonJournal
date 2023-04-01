@@ -230,7 +230,7 @@ button {
 }
 
 .header_section {
-    background-image: url(../images/banner-bg.png);
+    /* background-image: url(../images/banner-bg.png); */
     height: auto;
     background-size: 100%;
     width: 100%;

@@ -25,13 +25,14 @@ class Section(BaseModel):
 
 class Article(BaseModel):
     art_title         = models.CharField(max_length=255)
+    main_home         = models.BooleanField(default=False)
     section           = models.ForeignKey(Section,on_delete=models.CASCADE)
     description       = RichTextField()
     source            = models.CharField(max_length=255, blank=True,null=True)
     release_date      = models.DateTimeField()
     release_by        = models.ForeignKey(User,on_delete=models.DO_NOTHING)
-    main_home_image   = models.ImageField(upload_to='static/articlehome/',blank=True,null=True)
-    image_icon        = models.ImageField(upload_to='static/articleicon/',blank=True,null=True)
+    main_home_image   = models.ImageField(upload_to='static/articlehome/',help_text='Please Upload the image size of 756 * 411', blank=True,null=True)
+    image_icon        = models.ImageField(upload_to='static/articleicon/',help_text='Please Upload the image size of 154 * 125',blank=True,null=True)
     def __str__(self):
         return self.art_title
 

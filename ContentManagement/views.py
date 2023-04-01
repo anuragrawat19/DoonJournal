@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import ContactUs,ContentSection,Images
+from .models import ContactUs,ContentSection,Images,Article
 from django.core.mail import send_mail
 
 
@@ -9,7 +9,12 @@ from django.core.mail import send_mail
 
 def home(request):
     template = 'index.html'
-    home_images = Images.objects.filter(active=2,slug='home-scroller')
+    # home_images = Images.objects.filter(active=2,slug='home-scroller')
+    main_article = Article.objects.filter(active=2,main_home=True)
+    if main_article:
+        main_article = main_article.latest('id')
+
+
     return render(request,template,locals())
 
 def about_us(request):
