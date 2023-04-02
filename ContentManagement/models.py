@@ -27,6 +27,7 @@ class Article(BaseModel):
     art_title         = models.CharField(max_length=255)
     main_home         = models.BooleanField(default=False)
     section           = models.ForeignKey(Section,on_delete=models.CASCADE)
+    slug              = models.SlugField(unique=True)
     description       = RichTextField()
     source            = models.CharField(max_length=255, blank=True,null=True)
     release_date      = models.DateTimeField()

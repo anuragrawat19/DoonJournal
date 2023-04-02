@@ -44,3 +44,9 @@ def commoncontentpage(request,slug):
     if contents:
         content = contents.latest('created')
     return render(request,template,locals())
+
+def articledetail(request,slug):
+    template = 'article_detaills.html'
+    article  = Article.objects.get(slug=slug)
+    recent_articles = Article.objects.filter(active=2).order_by('-id')[:4]
+    return render(request,template,locals())

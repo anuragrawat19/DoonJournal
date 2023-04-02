@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+      <div class="about_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12 col-sm-12">
+                  <div class="about_img"><img src="/static/{{ article.main_home_image.url }}"></div>
+                  <div class="like_icon"><img src="/static/images/like-icon.png"></div>
+                  <p class="post_text">Posted on : {{article.release_date}}</p>
+                  {% if article.source %}
+                     <p class="post_text">Source: {{article.source}}</p>
+                  {% endif %}
+                  <h2 class="most_text">{{article.art_title}}</h2>
+                  <p style='color:#0c0a0a;'class="lorem_text">{{ article.description| safe }}</p>
+                  <div class="social_icon_main">
+                     <div class="social_icon">
+                        <ul>
+                           <!-- <li><a href="#"><img src="/static/images/fb-icon.png"></a></li>
+                           <li><a href="#"><img src="/static/images/twitter-icon.png"></a></li>
+                           <li><a href="#"><img src="/static/images/instagram-icon.png"></a></li> -->
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+            <div class="row">
+                <h1 class="recent_taital">Recent post</h1>
+                       {% for art in recent_articles %}
+                       <a href="/updates/{{art.slug}}">
+                        <div class="col-lg-2 col-sm-2">
+                            <div class="recent_box">
+                            
+                            <div class="image_6"><img src="/static/{{art.image_icon.url}}"></div>
+                            
+                            <div class="recent_right">
+                                <h6 style='font-weight:600'class="">{{art.art_title}}</h6>
+                                <a href="#">Read More</a>
+                            </div>
+                            </div>
+                        </div>
+                       </a>
+                       {% endfor %}
+                 </div>
+            </div>
+         </div>
+      </div>
+      <!-- recent section end --> 
+      <!-- tag section start -->
+{% endblock %}
