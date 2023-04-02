@@ -78,7 +78,7 @@
          <div class="container">
             <div class="row">
                <div class="col-lg-12 col-sm-12">
-                  <div class="about_img"><img src="{{ main_article.main_home_image.url }}"></div>
+                  <div class="about_img"><img src="/static/{{ main_article.main_home_image.url }}"></div>
                   <div class="like_icon"><img src="/static/images/like-icon.png"></div>
                   <p class="post_text">Posted on : {{main_article.release_date}}</p>
                   {% if main_article.source %}
@@ -107,7 +107,7 @@
                         <a href="/">
                            <div class="recent_box">
                               <div class="recent_left">
-                                 <div class="image_6"><img src="{{art.image_icon.url}}"></div>
+                                 <div class="image_6"><img src="/static/{{art.image_icon.url}}"></div>
                               </div>
                               <div class="recent_right">
                                  <h3 class="consectetur_text">{{art.art_title}}</h3>
