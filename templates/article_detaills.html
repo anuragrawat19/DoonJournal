@@ -26,6 +26,7 @@
             </div>
             <div class="row">
                 <h1 class="recent_taital">Recent post</h1>
+                    <div class="newsletter_main">
                        {% for art in recent_articles %}
                        <a href="/updates/{{art.slug}}">
                         <div class="col-lg-2 col-sm-2">
@@ -41,6 +42,7 @@
                         </div>
                        </a>
                        {% endfor %}
+                    </div>
                  </div>
             </div>
          </div>
