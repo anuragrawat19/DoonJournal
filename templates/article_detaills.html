@@ -26,7 +26,6 @@
             </div>
             <div class="row">
                 <h1 class="recent_taital">Recent post</h1>
-                    <div class="newsletter_main">
                        {% for art in recent_articles %}
                        <a href="/updates/{{art.slug}}">
                         <div class="col-lg-2 col-sm-2">
@@ -36,13 +35,12 @@
                             
                             <div class="recent_right">
                                 <h6 style='font-weight:600'class="">{{art.art_title}}</h6>
-                                <a href="#">Read More</a>
+                                <a href="/updates/{{art.slug}}">Read More</a>
                             </div>
                             </div>
                         </div>
                        </a>
                        {% endfor %}
-                    </div>
                  </div>
             </div>
          </div>

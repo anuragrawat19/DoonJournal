@@ -48,5 +48,5 @@ def commoncontentpage(request,slug):
 def articledetail(request,slug):
     template = 'article_detaills.html'
     article  = Article.objects.get(slug=slug)
-    recent_articles = Article.objects.filter(active=2).order_by('-id')[:4]
+    recent_articles = Article.objects.filter(active=2).exclude(slug=slug).order_by('-id')[:8]
     return render(request,template,locals())
