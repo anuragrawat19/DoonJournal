@@ -57,7 +57,7 @@ class ContentSection(BaseModel):
 
 class Images(BaseModel):
     slug           = models.SlugField()
-    image          = models.ImageField(upload_to='static/sectionimages/',blank=True,null=True)
+    image          = models.ImageField(upload_to='sectionimages/',blank=True,null=True)
     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE,blank=True,null=True)
     object_id = models.PositiveIntegerField(blank=True,null=True)
     content_object = GenericForeignKey('content_type', 'object_id')
