@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import ContactUs,ContentSection,Images,Article
+from places.models import Place
 from django.core.mail import send_mail
 
 

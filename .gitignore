@@ -7,5 +7,6 @@ __pycache__
 /static/articleicon
 /static/articlehome
 /static/sectionimages
+/static/places
 /DoonJournal/settings.py
 

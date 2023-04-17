@@ -1,6 +1,8 @@
 from django.db import models
 from ckeditor.fields import RichTextField
 from django.contrib.auth.models import User
+from django.contrib.contenttypes.models import ContentType
+from django.contrib.contenttypes.fields import GenericForeignKey
 
 
 
@@ -56,6 +58,9 @@ class ContentSection(BaseModel):
 class Images(BaseModel):
     slug           = models.SlugField()
     image          = models.ImageField(upload_to='static/sectionimages/',blank=True,null=True)
+    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE,blank=True,null=True)
+    object_id = models.PositiveIntegerField(blank=True,null=True)
+    content_object = GenericForeignKey('content_type', 'object_id')
     
     def __str__(self):
         return  self.slug

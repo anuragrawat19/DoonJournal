@@ -9,6 +9,8 @@ urlpatterns = [
     path('contact-us/', contact_us),
     path('doonjournal/<slug:slug>/',commoncontentpage),
     path('updates/<slug:slug>/',articledetail),
+    # path('uk-places/',ukplaces),
+
 
 
 
